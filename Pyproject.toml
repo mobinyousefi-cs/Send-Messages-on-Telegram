@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegram-message-sender"
+version = "0.1.0"
+description = "Tkinter + Telethon Telegram message sender with CLI"
+readme = "README.md"
+authors = [
+  { name = "Mobin Yousefi", email = "" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+  "telethon>=1.36.0",
+  "python-dotenv>=1.0.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/mobinyousefi-cs/telegram-message-sender"
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "UP", "B", "SIM", "PL"]
+ignore = ["E203", "E501"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
